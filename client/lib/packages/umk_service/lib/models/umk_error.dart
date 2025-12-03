@@ -1,0 +1,1 @@
+class UmkError extends Error {}
