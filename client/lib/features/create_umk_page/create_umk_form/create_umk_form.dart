@@ -234,7 +234,7 @@ class _KtpFilePickerState extends State<KtpFilePicker> {
             FilledButton.icon(
               onPressed: () async {
                 final result = await FilePicker.platform.pickFiles(
-                  type: FileType.custom,
+                  type: .custom,
                   allowedExtensions: ['xlsx', 'xls'],
                 );
 
