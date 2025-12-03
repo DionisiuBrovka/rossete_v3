@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 void setup() {
+  GetIt.I.registerSingleton(GlobalKey<NavigatorState>());
+
   GetIt.I.registerSingleton<UmkService>(UmkService());
 }
 
@@ -25,6 +27,7 @@ class MainApp extends StatelessWidget {
           dynamicSchemeVariant: .expressive,
         ),
       ),
+      navigatorKey: GetIt.I<GlobalKey<NavigatorState>>(),
       home: StartPage(),
     );
   }
