@@ -21,7 +21,12 @@ class StartPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.small(
-        onPressed: () {},
+        onPressed: () {
+          showAdaptiveDialog(
+            context: context,
+            builder: (context) => Dialog.fullscreen(),
+          );
+        },
         child: Icon(Icons.info),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:client/features/create_umk_page/create_umk_form/create_umk_form.
 import 'package:flutter/material.dart';
 
 class CreateUmkPageController with ChangeNotifier {
+  TextEditingController apiController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController shortNameController = TextEditingController();
   TextEditingController specialityNameController = TextEditingController();
@@ -9,12 +10,12 @@ class CreateUmkPageController with ChangeNotifier {
   TextEditingController skillsController = TextEditingController();
   TextEditingController knowledgeController = TextEditingController();
   TextEditingController directoryController = TextEditingController();
-  TextEditingController ktpFileController = TextEditingController();
 
   void onCreateButtonPressed() {}
 
   @override
   void dispose() {
+    apiController.dispose();
     nameController.dispose();
     shortNameController.dispose();
     specialityNameController.dispose();
@@ -22,7 +23,6 @@ class CreateUmkPageController with ChangeNotifier {
     skillsController.dispose();
     knowledgeController.dispose();
     directoryController.dispose();
-    ktpFileController.dispose();
     super.dispose();
   }
 }
