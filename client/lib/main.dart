@@ -18,11 +18,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.from(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 121, 150, 255),
-          brightness: Brightness.dark,
-          dynamicSchemeVariant: DynamicSchemeVariant.expressive,
+      theme: .from(
+        colorScheme: .fromSeed(
+          seedColor: .fromARGB(255, 121, 150, 255),
+          brightness: .dark,
+          dynamicSchemeVariant: .expressive,
         ),
       ),
       home: StartPage(),

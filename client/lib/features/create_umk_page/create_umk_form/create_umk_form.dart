@@ -42,7 +42,7 @@ class KnowledgeField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Учащийся должен знать:',
         suffixIcon: Icon(Icons.menu_book),
-        floatingLabelAlignment: FloatingLabelAlignment.start,
+        floatingLabelAlignment: .start,
         alignLabelWithHint: true,
       ),
     );
@@ -63,7 +63,7 @@ class SkillsField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Учащийся должен уметь:',
         suffixIcon: Icon(Icons.school),
-        floatingLabelAlignment: FloatingLabelAlignment.start,
+        floatingLabelAlignment: .start,
         alignLabelWithHint: true,
       ),
     );
@@ -84,7 +84,7 @@ class DescField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: 'Описание предмета',
         suffixIcon: Icon(Icons.description),
-        floatingLabelAlignment: FloatingLabelAlignment.start,
+        floatingLabelAlignment: .start,
         alignLabelWithHint: true,
       ),
     );
@@ -163,9 +163,9 @@ class _DirectoryPickerState extends State<DirectoryPicker> {
   @override
   Widget build(BuildContext context) {
     return Card.filled(
-      margin: EdgeInsets.all(0),
+      margin: .all(0),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: .all(8.0),
         child: Row(
           children: [
             Expanded(
@@ -219,9 +219,9 @@ class _KtpFilePickerState extends State<KtpFilePicker> {
   @override
   Widget build(BuildContext context) {
     return Card.filled(
-      margin: EdgeInsets.all(0),
+      margin: .all(0),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const .all(8.0),
         child: Row(
           children: [
             Expanded(

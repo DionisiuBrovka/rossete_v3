@@ -48,13 +48,14 @@ class _CreateUmkPageState extends State<CreateUmkPage> {
     return Scaffold(
       appBar: AppBar(title: Text('Создать УМК'), elevation: 2),
       body: Align(
-        alignment: Alignment.topCenter,
+        alignment: .topCenter,
         child: CreateUmkForm(controller: controller),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: controller.onCreateButtonPressed,
         child: Icon(Icons.check),
       ),
+      floatingActionButtonLocation: .centerFloat,
     );
   }
 

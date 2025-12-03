@@ -6,12 +6,40 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: StartPageMenu()));
+    return Scaffold(
+      body: Center(
+        child: _StartPageMenu(
+          title: 'Rossete',
+          version: 'v3',
+          onCreatePress: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CreateUmkPage()),
+            );
+          },
+          onLoadPress: null,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton.small(
+        onPressed: () {},
+        child: Icon(Icons.info),
+      ),
+    );
   }
 }
 
-class StartPageMenu extends StatelessWidget {
-  const StartPageMenu({super.key});
+class _StartPageMenu extends StatelessWidget {
+  const _StartPageMenu({
+    required this.title,
+    required this.version,
+    this.onCreatePress,
+    this.onLoadPress,
+  });
+
+  final String title;
+  final String version;
+  final Function()? onCreatePress;
+  final Function()? onLoadPress;
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +49,14 @@ class StartPageMenu extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       spacing: 8,
       children: [
-        const _TitleText(),
+        _TitleText(title: title, version: version),
         TextButton.icon(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const CreateUmkPage()),
-            );
-          },
+          onPressed: onCreatePress,
           icon: Icon(Icons.create),
           label: Text("Создать УМК"),
         ),
         TextButton.icon(
-          onPressed: null,
+          onPressed: onLoadPress,
           icon: Icon(Icons.upload),
           label: Text("Загрузить УМК"),
         ),
@@ -43,18 +66,22 @@ class StartPageMenu extends StatelessWidget {
 }
 
 class _TitleText extends StatelessWidget {
-  const _TitleText();
+  const _TitleText({required this.title, required this.version});
+
+  final String title;
+  final String version;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: .center,
+      spacing: 4,
       children: [
-        Text('Rossete', style: Theme.of(context).textTheme.headlineMedium),
+        Text(title, style: Theme.of(context).textTheme.headlineMedium),
         Text(
-          'v3.0',
+          version,
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontStyle: FontStyle.italic,
+            fontStyle: .italic,
             color: Theme.of(
               context,
             ).colorScheme.onSurfaceVariant.withAlpha(100),
